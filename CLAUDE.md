@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**elnop.tech** is a Next.js 14 app called "CodinGame Embed Generator". It lets users generate embeddable SVG profile cards for [CodinGame](https://www.codingame.com) profiles, with selectable badges. All source code lives in `site/`.
+**CodinCard** is a Next.js 14 app that lets users generate embeddable SVG profile cards for [CodinGame](https://www.codingame.com) profiles, with selectable badges. All source code lives in `site/`.
 
 ## Commands
 

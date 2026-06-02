@@ -20,7 +20,7 @@ function HomeHeader() {
 					<span className="header_title_card">Card</span>
 				</span>
 			</a>
-			<h1 className="header_center_title">CodinGame Embed Generator</h1>
+			<h1 className="header_center_title">CodinCard</h1>
 		</header>
 	);
 }

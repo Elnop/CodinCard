@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "CodinGame Embed Generator",
-	description: "CodinGame Embed Generator",
+	title: "CodinCard",
+	description: "Generate embeddable SVG profile cards for CodinGame",
 };
 
 export default function RootLayout({
