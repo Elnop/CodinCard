@@ -683,6 +683,312 @@
 	box-shadow: 0 0 16px rgba(242, 187, 19, 0.2);
 }
 
+/* ── GitHub Usage ── */
+.landing_github {
+	width: 100%;
+	padding: 5rem 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3rem;
+	background: var(--color-nav-dark);
+}
+
+.landing_github__title {
+	font-size: clamp(1.4rem, 3vw, 2rem);
+	font-weight: 700;
+	color: #e6edf3;
+	text-align: center;
+	letter-spacing: -0.01em;
+}
+
+.landing_github__layout {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 2rem;
+	width: 100%;
+	max-width: 1200px;
+}
+
+/* ── Left: markdown snippet ── */
+.landing_github__snippet {
+	flex: 0 0 auto;
+	width: 320px;
+	background: #161b22;
+	border: 1.5px solid #30363d;
+	border-radius: 10px;
+	overflow: hidden;
+	font-family: "JetBrains Mono", "Courier New", monospace;
+	font-size: 0.72rem;
+}
+
+.landing_github__snippet__bar {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 0.5rem 0.8rem;
+	background: #0d1117;
+	border-bottom: 1.5px solid #30363d;
+}
+
+.landing_github__snippet__dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #30363d;
+}
+
+.landing_github__snippet__dot:nth-child(1) { background: #ff5f57; }
+.landing_github__snippet__dot:nth-child(2) { background: #febc2e; }
+.landing_github__snippet__dot:nth-child(3) { background: #28c840; }
+
+.landing_github__snippet__label {
+	margin-left: 0.4rem;
+	color: #6e7681;
+	font-size: 0.65rem;
+}
+
+.landing_github__snippet__body {
+	padding: 1rem;
+	color: #e6edf3;
+	word-break: break-all;
+	line-height: 1.6;
+	white-space: pre-wrap;
+	margin: 0;
+}
+
+/* ── Center: arrow ── */
+.landing_github__arrow {
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.landing_github__arrow svg {
+	width: 80px;
+	height: 60px;
+	overflow: visible;
+}
+
+.landing_github__arrow svg path {
+	stroke: var(--color-accent);
+	stroke-width: 2.5;
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-dasharray: 200;
+	stroke-dashoffset: 200;
+	transition: stroke-dashoffset 0.8s ease-in-out;
+}
+
+.landing_github__arrow svg path.animated {
+	stroke-dashoffset: 0;
+}
+
+/* ── Right: GitHub mock ── */
+.landing_github__mock {
+	flex: 1 1 0;
+	min-width: 0;
+	background: #0d1117;
+	border: 1.5px solid #30363d;
+	border-radius: 10px;
+	overflow: hidden;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	font-size: 0.8rem;
+	color: #e6edf3;
+}
+
+.landing_github__mock__topbar {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	padding: 0.5rem 1rem;
+	background: #161b22;
+	border-bottom: 1px solid #30363d;
+}
+
+.landing_github__mock__topbar__dot {
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+}
+
+.landing_github__mock__topbar__dot:nth-child(1) { background: #ff5f57; }
+.landing_github__mock__topbar__dot:nth-child(2) { background: #febc2e; }
+.landing_github__mock__topbar__dot:nth-child(3) { background: #28c840; }
+
+.landing_github__mock__topbar__url {
+	flex: 1;
+	background: #0d1117;
+	border: 1px solid #30363d;
+	border-radius: 6px;
+	padding: 0.2rem 0.6rem;
+	font-size: 0.65rem;
+	color: #6e7681;
+	font-family: "JetBrains Mono", monospace;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.landing_github__mock__body {
+	display: flex;
+	flex-direction: row;
+	gap: 1.2rem;
+	padding: 1.2rem;
+}
+
+.landing_github__mock__sidebar {
+	flex: 0 0 auto;
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+
+.landing_github__mock__avatar {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #f2bb13 0%, #e05c00 100%);
+	border: 3px solid #30363d;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 4rem;
+}
+
+.landing_github__mock__username {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: #e6edf3;
+}
+
+.landing_github__mock__bio {
+	font-size: 0.75rem;
+	color: #8b949e;
+	line-height: 1.5;
+}
+
+.landing_github__mock__location {
+	font-size: 0.72rem;
+	color: #6e7681;
+}
+
+.landing_github__mock__stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin-top: 0.2rem;
+}
+
+.landing_github__mock__stat {
+	font-size: 0.7rem;
+	color: #8b949e;
+}
+
+.landing_github__mock__stat strong {
+	color: #e6edf3;
+	font-weight: 600;
+}
+
+.landing_github__mock__main {
+	flex: 1 1 0;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+}
+
+.landing_github__mock__readme {
+	background: #161b22;
+	border: 1px solid #30363d;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.landing_github__mock__readme__header {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 0.5rem 0.8rem;
+	border-bottom: 1px solid #30363d;
+	font-size: 0.72rem;
+	color: #8b949e;
+}
+
+.landing_github__mock__readme__badge {
+	background: #21262d;
+	border: 1px solid #30363d;
+	border-radius: 4px;
+	padding: 0.1rem 0.4rem;
+	font-size: 0.65rem;
+	color: #58a6ff;
+	font-family: "JetBrains Mono", monospace;
+}
+
+.landing_github__mock__readme__body {
+	padding: 0.8rem;
+}
+
+.landing_github__mock__readme__body img {
+	width: 100%;
+	height: auto;
+	border-radius: 6px;
+	display: block;
+}
+
+.landing_github__mock__repos {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.6rem;
+}
+
+.landing_github__mock__repo {
+	background: #161b22;
+	border: 1px solid #30363d;
+	border-radius: 8px;
+	padding: 0.7rem 0.9rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+.landing_github__mock__repo__name {
+	font-size: 0.78rem;
+	color: #58a6ff;
+	font-weight: 600;
+}
+
+.landing_github__mock__repo__desc {
+	font-size: 0.68rem;
+	color: #8b949e;
+	line-height: 1.4;
+}
+
+.landing_github__mock__repo__meta {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	margin-top: 0.2rem;
+	font-size: 0.65rem;
+	color: #8b949e;
+}
+
+.landing_github__mock__repo__lang {
+	display: flex;
+	align-items: center;
+	gap: 0.3rem;
+}
+
+.landing_github__mock__repo__lang__dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+}
+
 @media (max-width: 768px) {
 	.landing_hero_bottom {
 		animation-delay: 0.8s;
@@ -707,5 +1013,41 @@
 
 	.landing_scroll_hint {
 		display: none;
+	}
+
+	.landing_github__layout {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.landing_github__snippet {
+		width: 100%;
+		max-width: 400px;
+	}
+
+	.landing_github__arrow {
+		transform: rotate(90deg);
+	}
+
+	.landing_github__mock__body {
+		flex-direction: column;
+	}
+
+	.landing_github__mock__sidebar {
+		width: 100%;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		gap: 0.8rem;
+	}
+
+	.landing_github__mock__avatar {
+		width: 64px;
+		height: 64px;
+		font-size: 1.8rem;
+	}
+
+	.landing_github__mock__repos {
+		grid-template-columns: 1fr;
 	}
 }

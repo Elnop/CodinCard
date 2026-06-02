@@ -221,6 +221,174 @@ function LandingFeatures() {
 	);
 }
 
+const CARD_URL =
+	"https://codincard.vercel.app/svg_card/?w=1000&public_handle=961697f63a0daf0d4649a6f1c368acf81098515&bg_img=true&badges=CODING_SPEED,AI,ALGORITHMS,COLLABORATION,38823044854472,1923859026951,1925032048027,110379867599957,1925113228778,1925189810047";
+
+const MARKDOWN_SNIPPET = `![CodinGame Profile](${CARD_URL})`;
+
+const FAKE_REPOS = [
+	{
+		name: "competitive-programming",
+		desc: "Solutions to CodinGame, Advent of Code and competitive programming challenges.",
+		lang: "Python",
+		langColor: "#3572A5",
+		stars: 42,
+	},
+	{
+		name: "dotfiles",
+		desc: "My personal dev environment config — zsh, nvim, tmux.",
+		lang: "Shell",
+		langColor: "#89e051",
+		stars: 17,
+	},
+	{
+		name: "advent-of-code",
+		desc: "AoC solutions, written daily in December.",
+		lang: "TypeScript",
+		langColor: "#3178c6",
+		stars: 9,
+	},
+	{
+		name: "portfolio",
+		desc: "Personal portfolio built with Next.js and Tailwind.",
+		lang: "TypeScript",
+		langColor: "#3178c6",
+		stars: 5,
+	},
+];
+
+function LandingGithubUsage() {
+	const sectionRef = useRef<HTMLElement>(null);
+	const arrowPathRef = useRef<SVGPathElement>(null);
+
+	useEffect(() => {
+		const path = arrowPathRef.current;
+		const section = sectionRef.current;
+		if (!path || !section) return;
+
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					path.classList.add("animated");
+					observer.disconnect();
+				}
+			},
+			{ threshold: 0.3 }
+		);
+		observer.observe(section);
+		return () => observer.disconnect();
+	}, []);
+
+	return (
+		<section className="landing_github" ref={sectionRef}>
+			<h2 className="landing_github__title">
+				Intègre ta card dans ton profil GitHub
+			</h2>
+
+			<div className="landing_github__layout">
+				{/* Left: markdown snippet */}
+				<div className="landing_github__snippet">
+					<div className="landing_github__snippet__bar">
+						<span className="landing_github__snippet__dot" />
+						<span className="landing_github__snippet__dot" />
+						<span className="landing_github__snippet__dot" />
+						<span className="landing_github__snippet__label">README.md</span>
+					</div>
+					<pre className="landing_github__snippet__body">{MARKDOWN_SNIPPET}</pre>
+				</div>
+
+				{/* Center: animated arrow */}
+				<div className="landing_github__arrow">
+					<svg viewBox="0 0 80 60" aria-hidden="true">
+						<path
+							ref={arrowPathRef}
+							d="M4,30 C20,10 50,50 68,30 M58,22 L68,30 L58,38"
+						/>
+					</svg>
+				</div>
+
+				{/* Right: GitHub profile mock */}
+				<div className="landing_github__mock">
+					{/* Browser chrome */}
+					<div className="landing_github__mock__topbar">
+						<span className="landing_github__mock__topbar__dot" />
+						<span className="landing_github__mock__topbar__dot" />
+						<span className="landing_github__mock__topbar__dot" />
+						<span className="landing_github__mock__topbar__url">
+							github.com/alexdev
+						</span>
+					</div>
+
+					<div className="landing_github__mock__body">
+						{/* Sidebar: avatar + user info */}
+						<aside className="landing_github__mock__sidebar">
+							<div className="landing_github__mock__avatar">🧑‍💻</div>
+							<span className="landing_github__mock__username">alexdev</span>
+							<span className="landing_github__mock__bio">
+								Competitive programmer · CodinGame Legend · Open source enthusiast
+							</span>
+							<span className="landing_github__mock__location">📍 Paris, France</span>
+							<div className="landing_github__mock__stats">
+								<span className="landing_github__mock__stat">
+									<strong>312</strong> followers
+								</span>
+								<span className="landing_github__mock__stat">·</span>
+								<span className="landing_github__mock__stat">
+									<strong>87</strong> following
+								</span>
+							</div>
+						</aside>
+
+						{/* Main: README + repos */}
+						<div className="landing_github__mock__main">
+							{/* README box */}
+							<div className="landing_github__mock__readme">
+								<div className="landing_github__mock__readme__header">
+									<span className="landing_github__mock__readme__badge">
+										alexdev / alexdev
+									</span>
+									<span>README.md</span>
+								</div>
+								<div className="landing_github__mock__readme__body">
+									{/* eslint-disable-next-line @next/next/no-img-element */}
+									<img
+										src={CARD_URL}
+										alt="CodinGame Profile Card"
+									/>
+								</div>
+							</div>
+
+							{/* Fake repos grid */}
+							<div className="landing_github__mock__repos">
+								{FAKE_REPOS.map((repo) => (
+									<div key={repo.name} className="landing_github__mock__repo">
+										<span className="landing_github__mock__repo__name">
+											{repo.name}
+										</span>
+										<span className="landing_github__mock__repo__desc">
+											{repo.desc}
+										</span>
+										<div className="landing_github__mock__repo__meta">
+											<span className="landing_github__mock__repo__lang">
+												<span
+													className="landing_github__mock__repo__lang__dot"
+													style={{ background: repo.langColor }}
+												/>
+												{repo.lang}
+											</span>
+											<span>⭐ {repo.stars}</span>
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+}
+
 function ExampleCard({ handle, badges }: { handle: string; badges: string }) {
 	const [loaded, setLoaded] = useState(false);
 	const [error, setError] = useState(false);
@@ -276,6 +444,7 @@ export default function LandingPage() {
 		<div className="landing_page">
 			<LandingHero />
 			<LandingFeatures />
+			<LandingGithubUsage />
 			<LandingExample />
 		</div>
 	);
