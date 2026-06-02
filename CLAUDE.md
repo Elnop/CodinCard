@@ -50,6 +50,18 @@ Wrapped at the page root by `GeneratorProviders`:
 
 `@/` maps to `site/` (configured in `tsconfig.json`).
 
+## Deployment
+
+Hosted on **Vercel** (free tier), connected to the `Elnop/CodinCard` GitHub repo.
+
+- **URL**: `codincard.vercel.app`
+- **Root directory**: `site/` (must be set in Vercel project settings)
+- **Auto-deploy**: every push to `main` triggers a new deployment
+- **No environment variables** required
+- `/svg_card` responses are cached for 1h (`Cache-Control: public, max-age=3600, stale-while-revalidate=86400`) to reduce Vercel function invocations when cards are embedded in GitHub READMEs
+
+To redeploy from scratch: [vercel.com/new](https://vercel.com/new) → import `Elnop/CodinCard` → set Root Directory to `site/`.
+
 ## Important notes
 
 - `SVGCard` reads CSS files synchronously at render time (`readFileSync`). CSS paths are relative to `process.cwd()`, which must be the Next.js project root (`site/`).
