@@ -1,0 +1,60 @@
+.html,
+.body {
+	height: fit-content;
+	width: fit-content;
+}
+
+.card-min_container {
+	box-sizing: border-box;
+	display: block;
+	aspect-ratio: 2 / 1;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.card-min_background-filter {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card-min_codingame-logo {
+	position: absolute;
+	top: 2%;
+	left: 2%;
+	height: 8%;
+	aspect-ratio: 4/1;
+	opacity: 1;
+}
+
+.card-min_left-container {
+	display: inline-block;
+	position: absolute;
+	top: 15%;
+	height: 80%;
+	width: 40%;
+}
+
+.card-min_pdp {
+	width: 38%;
+	aspect-ratio: 1 / 1;
+	margin: 0 auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.card-min_pseudo {
+	margin: 0 auto;
+	margin-top: 2%;
+	font-size: calc(10px + 1.5vw);
+	font-weight: bold;
+	text-align: center;
+	width: 50%;
+	color: #d9d9d9;
+}

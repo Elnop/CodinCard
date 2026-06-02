@@ -1,0 +1,34 @@
+.progress-bar_container {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.progress-bar_logo {
+	position: absolute;
+	height: 100%;
+	aspect-ratio: 1 / 1;
+	top: 0;
+	left: 0;
+}
+
+.progress-bar_threshold {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 40%;
+	top: 30%;
+	background-color: #d9d9d9;
+}
+
+.progress-bar_progress {
+	display: block;
+	height: 100%;
+}
+
+.progress-bar_below-text {
+	display: block;
+	position: absolute;
+	font-weight: bold;
+}

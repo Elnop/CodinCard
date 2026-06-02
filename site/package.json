@@ -1,0 +1,36 @@
+{
+	"name": "codingame_embed_generator",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --hostname localhost -p 3000",
+		"build": "next build",
+		"start": "next start -p 3000",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"typecheck": "tsc --noEmit",
+		"check": "npm run typecheck && npm run lint && npm run format:check",
+		"check:fix": "npm run lint:fix && npm run format"
+	},
+	"dependencies": {
+		"codingame_profile_fetcher": "^0.3.7",
+		"next": "^16.2.7",
+		"react": "^19.2.7",
+		"react-dom": "^19.2.7",
+		"react-hook-form": "^7.50.1"
+	},
+	"devDependencies": {
+		"@types/css-modules": "^1.0.5",
+		"@types/node": "^20",
+		"@types/react": "^19.2.16",
+		"@types/react-dom": "^19.2.3",
+		"@typescript-eslint/eslint-plugin": "^8.60.1",
+		"@typescript-eslint/parser": "^8.60.1",
+		"eslint-config-prettier": "^10.1.8",
+		"prettier": "^3.8.3",
+		"typescript": "^5",
+		"typescript-eslint": "^8.60.1"
+	}
+}

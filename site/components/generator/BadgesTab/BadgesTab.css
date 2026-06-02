@@ -1,0 +1,184 @@
+.badges-tab {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	box-sizing: border-box;
+	background: var(--color-header-bg);
+}
+
+.badges-tab-header {
+	height: 44px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--color-nav-dark);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.badges-tab-header h2 {
+	font-family: "Barlow Condensed", "Open Sans", sans-serif;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: rgba(240, 246, 252, 0.45);
+}
+
+.badges-tab-content {
+	display: block;
+	flex: 1;
+	overflow-y: auto;
+	scrollbar-width: thin;
+	scrollbar-color: rgba(242, 187, 19, 0.25) transparent;
+	background-color: var(--color-header-bg);
+	padding: 0.5rem 0;
+}
+
+.badges-tab-content::-webkit-scrollbar {
+	width: 4px;
+}
+
+.badges-tab-content::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.badges-tab-content::-webkit-scrollbar-thumb {
+	background: rgba(242, 187, 19, 0.3);
+	border-radius: 2px;
+}
+
+.badges-tab__section {
+	margin-bottom: 4px;
+	padding: 0 0.75rem 0.75rem;
+}
+
+.badges-tab_section__header {
+	width: 100%;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+	height: 36px;
+	display: flex;
+	align-items: center;
+	padding-left: 4px;
+}
+
+.badges-tab_section__header h3 {
+	font-family: "Barlow Condensed", "Open Sans", sans-serif;
+	font-size: 0.72rem;
+	color: rgba(242, 187, 19, 0.6);
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	font-weight: 700;
+}
+
+.badges-tab_section__items {
+	padding-top: 0.6rem;
+	width: 100%;
+}
+
+.badge-btn {
+	display: inline-block;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	cursor: pointer;
+	position: relative;
+	user-select: none;
+	transition: border-color 0.15s;
+}
+
+.badge-btn:hover {
+	border-color: rgba(242, 187, 19, 0.5);
+}
+
+.badge-btn--active {
+	border-color: var(--color-accent);
+	box-shadow: 0 0 8px rgba(242, 187, 19, 0.25);
+}
+
+.badge-btn--active:hover {
+	border-color: var(--color-accent);
+}
+
+.badge-btn .badge {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.badge-btn:hover .badge_name_container {
+	transition: 0.3s;
+	opacity: 0;
+}
+
+.badge-btn:hover .badge_description {
+	transition-delay: 0.4s;
+	opacity: 1;
+}
+
+/* ── Skeleton ── */
+@keyframes shimmer {
+	0% {
+		background-position: -200% 0;
+	}
+	100% {
+		background-position: 200% 0;
+	}
+}
+
+.badges-tab-skeleton {
+	display: block;
+	flex: 1;
+	overflow: hidden;
+	padding: 0.5rem 0;
+}
+
+.badges-tab-skeleton__section {
+	margin-bottom: 4px;
+	padding: 0 0.75rem 0.75rem;
+}
+
+.badges-tab-skeleton__header {
+	width: 100%;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+	height: 36px;
+	display: flex;
+	align-items: center;
+	padding-left: 4px;
+}
+
+.badges-tab-skeleton__header-line {
+	width: 80px;
+	height: 10px;
+	border-radius: 3px;
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0.06) 25%,
+		rgba(255, 255, 255, 0.13) 50%,
+		rgba(255, 255, 255, 0.06) 75%
+	);
+	background-size: 200% 100%;
+	animation: shimmer 1.4s infinite linear;
+}
+
+.badges-tab-skeleton__items {
+	padding-top: 0.6rem;
+	width: 100%;
+}
+
+.badges-tab-skeleton__badge {
+	display: inline-block;
+	border-radius: 2px;
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0.06) 25%,
+		rgba(255, 255, 255, 0.13) 50%,
+		rgba(255, 255, 255, 0.06) 75%
+	);
+	background-size: 200% 100%;
+	animation: shimmer 1.4s infinite linear;
+}
+
+.badges-tab-skeleton__badge:nth-child(2n) {
+	animation-delay: 0.2s;
+}

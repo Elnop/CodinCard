@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&display=swap");
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2")
+		format("woff2");
+}
+
+:root {
+	--color-page-bg: #e7e9eb;
+	--color-card-bg: #ffffff;
+	--color-header-bg: #464f5a;
+	--color-header-text: #f5f5f5;
+	--color-nav-dark: #252e38;
+	--color-text-primary: #454c55;
+	--color-text-secondary: #838891;
+	--color-accent: #f2bb13;
+	--color-accent-hover: rgba(242, 187, 19, 0.7);
+	--color-btn-secondary-bg: rgba(69, 76, 85, 0.08);
+	--color-border: #e7e9eb;
+	--color-input-bg: #ffffff;
+	--color-input-focus-outline: 1px solid #838891;
+	--shadow-card: 0px 0px 10px 0px rgba(69, 76, 85, 0.3);
+	--radius-card: 7px;
+	--radius-pill: 999px;
+	--radius-btn: 0px;
+}
+
+html,
+body {
+	height: fit-content;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	flex: none;
+	font-family: "Open Sans", Lato, sans-serif;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}

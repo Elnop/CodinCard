@@ -1,0 +1,74 @@
+.card-min_badges-list {
+	position: absolute;
+	top: 10%;
+	left: 42.5%;
+	width: 55%;
+	height: 80%;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.card-min_badges-list .badge {
+	margin: 1%;
+}
+
+.card-min_badges-list .badge_name_container,
+.card-min_badges-list .badge_description {
+	animation-duration: 8s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.card-min_badges-list .badge_name_container {
+	animation-name: badge_name-animation;
+}
+
+.card-min_badges-list .badge_description {
+	animation-name: badge_description-animation;
+}
+
+@keyframes badge_name-animation {
+	from {
+		opacity: 1;
+	}
+	30% {
+		opacity: 1;
+	}
+	37.5% {
+		opacity: 0;
+	}
+	87.5% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes badge_description-animation {
+	from {
+		opacity: 0;
+	}
+	40% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	77.5% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 0;
+	}
+}
+/* 
+- name 25% 
+- name disparition 10
+- blanc 5
+- description apparition 10
+- description 25%
+- description disparition 10
+- blanc 5
+- name apparition 10
+*/
