@@ -259,17 +259,17 @@ const FAKE_REPOS = [
 
 function LandingGithubUsage() {
 	const sectionRef = useRef<HTMLElement>(null);
-	const arrowPathRef = useRef<SVGPathElement>(null);
+	const arrowRef = useRef<SVGSVGElement>(null);
 
 	useEffect(() => {
-		const path = arrowPathRef.current;
+		const svg = arrowRef.current;
 		const section = sectionRef.current;
-		if (!path || !section) return;
+		if (!svg || !section) return;
 
 		const observer = new IntersectionObserver(
 			([entry]) => {
 				if (entry.isIntersecting) {
-					path.classList.add("animated");
+					svg.querySelectorAll("path").forEach((p) => p.classList.add("animated"));
 					observer.disconnect();
 				}
 			},
@@ -299,11 +299,13 @@ function LandingGithubUsage() {
 
 				{/* Center: animated arrow */}
 				<div className="landing_github__arrow">
-					<svg viewBox="0 0 80 60" aria-hidden="true">
-						<path
-							ref={arrowPathRef}
-							d="M4,30 C20,10 50,50 68,30 M58,22 L68,30 L58,38"
-						/>
+					<svg ref={arrowRef} viewBox="0 0 100 60" aria-hidden="true">
+						{/* shaft: smooth S-curve */}
+						<path d="M6,30 C25,8 60,52 80,30" />
+						{/* arrowhead upper */}
+						<path d="M80,30 L70,20" />
+						{/* arrowhead lower */}
+						<path d="M80,30 L70,40" />
 					</svg>
 				</div>
 
@@ -315,7 +317,7 @@ function LandingGithubUsage() {
 						<span className="landing_github__mock__topbar__dot" />
 						<span className="landing_github__mock__topbar__dot" />
 						<span className="landing_github__mock__topbar__url">
-							github.com/alexdev
+							github.com/Elnop
 						</span>
 					</div>
 
@@ -323,7 +325,7 @@ function LandingGithubUsage() {
 						{/* Sidebar: avatar + user info */}
 						<aside className="landing_github__mock__sidebar">
 							<div className="landing_github__mock__avatar">🧑‍💻</div>
-							<span className="landing_github__mock__username">alexdev</span>
+							<span className="landing_github__mock__username">Elnop</span>
 							<span className="landing_github__mock__bio">
 								Competitive programmer · CodinGame Legend · Open source enthusiast
 							</span>
@@ -345,7 +347,7 @@ function LandingGithubUsage() {
 							<div className="landing_github__mock__readme">
 								<div className="landing_github__mock__readme__header">
 									<span className="landing_github__mock__readme__badge">
-										alexdev / alexdev
+										Elnop / Elnop
 									</span>
 									<span>README.md</span>
 								</div>

@@ -767,20 +767,33 @@
 }
 
 .landing_github__arrow svg {
-	width: 80px;
+	width: 100px;
 	height: 60px;
 	overflow: visible;
 }
 
-.landing_github__arrow svg path {
+/* shaft */
+.landing_github__arrow svg path:first-child {
 	stroke: var(--color-accent);
 	stroke-width: 2.5;
 	fill: none;
 	stroke-linecap: round;
 	stroke-linejoin: round;
-	stroke-dasharray: 200;
-	stroke-dashoffset: 200;
-	transition: stroke-dashoffset 0.8s ease-in-out;
+	stroke-dasharray: 120;
+	stroke-dashoffset: 120;
+	transition: stroke-dashoffset 0.7s ease-in-out;
+}
+
+/* arrowhead segments */
+.landing_github__arrow svg path:not(:first-child) {
+	stroke: var(--color-accent);
+	stroke-width: 2.5;
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-dasharray: 20;
+	stroke-dashoffset: 20;
+	transition: stroke-dashoffset 0.3s ease-in-out 0.65s;
 }
 
 .landing_github__arrow svg path.animated {
