@@ -208,7 +208,7 @@ function LandingHero() {
 							</button>
 						</form>
 						<span className="landing_form_hint">
-							colle l&apos;URL de ton profil CodinGame — l&apos;ID se trouve dans l&apos;URL de ta
+							colle l&apos;URL de ton profil CodinGame, l&apos;ID se trouve dans l&apos;URL de ta
 							page profil
 						</span>
 					</div>
@@ -237,7 +237,7 @@ const FEATURES = [
 	{
 		icon: <LinkIcon size={28} weight="regular" />,
 		title: "Embed partout",
-		desc: "README GitHub, portfolio, blog — une balise <img> suffit.",
+		desc: "README GitHub, portfolio, blog. une balise <img> suffit.",
 	},
 ];
 
@@ -263,34 +263,38 @@ const CARD_URL =
 
 const MARKDOWN_SNIPPET = `![CodinGame Profile](${CARD_URL})`;
 
-const FAKE_REPOS = [
+const REPOS = [
 	{
-		name: "competitive-programming",
-		desc: "Solutions to CodinGame, Advent of Code and competitive programming challenges.",
-		lang: "Python",
-		langColor: "#3572A5",
-		stars: 42,
-	},
-	{
-		name: "dotfiles",
-		desc: "My personal dev environment config — zsh, nvim, tmux.",
-		lang: "Shell",
-		langColor: "#89e051",
-		stars: 17,
-	},
-	{
-		name: "advent-of-code",
-		desc: "AoC solutions, written daily in December.",
-		lang: "TypeScript",
-		langColor: "#3178c6",
-		stars: 9,
-	},
-	{
-		name: "portfolio",
-		desc: "Personal portfolio built with Next.js and Tailwind.",
+		name: "codingame_profile_fetcher",
+		url: "https://github.com/Elnop/codingame_profile_fetcher",
+		desc: "A TypeScript library for retrieving CodinGame user profile information.",
 		lang: "TypeScript",
 		langColor: "#3178c6",
 		stars: 5,
+	},
+	{
+		name: "42-Fract-ol",
+		url: "https://github.com/Elnop/42-Fract-ol",
+		desc: "Fractal renderer in C using MiniLibX. Mandelbrot, Julia, and more.",
+		lang: "C",
+		langColor: "#555555",
+		stars: 4,
+	},
+	{
+		name: "Wizcard",
+		url: "https://github.com/Elnop/Wizcard",
+		desc: "Power app for Magic: The Gathering. deck builder and card browser.",
+		lang: "TypeScript",
+		langColor: "#3178c6",
+		stars: 3,
+	},
+	{
+		name: "red-tetris",
+		url: "https://github.com/Elnop/red-tetris",
+		desc: "Multiplayer Tetris game built in TypeScript with real-time gameplay.",
+		lang: "TypeScript",
+		langColor: "#3178c6",
+		stars: 2,
 	},
 ];
 
@@ -354,27 +358,41 @@ function LandingGithubUsage() {
 						<span className="landing_github__mock__topbar__dot" />
 						<span className="landing_github__mock__topbar__dot" />
 						<span className="landing_github__mock__topbar__dot" />
-						<span className="landing_github__mock__topbar__url">
+						<a
+							href="https://github.com/Elnop"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="landing_github__mock__topbar__url"
+						>
 							github.com/Elnop
-						</span>
+						</a>
 					</div>
 
 					<div className="landing_github__mock__body">
 						{/* Sidebar: avatar + user info */}
 						<aside className="landing_github__mock__sidebar">
-							<div className="landing_github__mock__avatar"><User size={80} weight="regular" /></div>
-							<span className="landing_github__mock__username">Elnop</span>
-							<span className="landing_github__mock__bio">
-								Competitive programmer · CodinGame Legend · Open source enthusiast
-							</span>
-							<span className="landing_github__mock__location"><MapPin size={14} weight="regular" /> Paris, France</span>
+							<div className="landing_github__mock__avatar"><User size={56} weight="regular" /></div>
+							<div className="landing_github__mock__names">
+								<span className="landing_github__mock__fullname">Leon Perrotin</span>
+								<span className="landing_github__mock__username">Elnop</span>
+							</div>
 							<div className="landing_github__mock__stats">
 								<span className="landing_github__mock__stat">
-									<strong>312</strong> followers
+									<strong>71</strong> followers
 								</span>
 								<span className="landing_github__mock__stat">·</span>
 								<span className="landing_github__mock__stat">
-									<strong>87</strong> following
+									<strong>73</strong> following
+								</span>
+							</div>
+							<div className="landing_github__mock__meta">
+								<span className="landing_github__mock__meta__item">
+									<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1.5 14.25c0 .138.112.25.25.25H4v-1.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 .75.75v1.25h2.25a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25ZM0 1.75C0 .784.784 0 1.75 0h8.5C11.216 0 12 .784 12 1.75v12.5c0 .966-.784 1.75-1.75 1.75h-8.5A1.75 1.75 0 0 1 0 14.25Zm3-2.5a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 .75.75v1h-2.5Zm4 0a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 .75.75v1h-2.5ZM3 5.25a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 0 1.5h-1A.75.75 0 0 1 3 5.25Zm4 0a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 0 1.5h-1A.75.75 0 0 1 7 5.25Zm-4 2.5A.75.75 0 0 1 3.75 7h1a.75.75 0 0 1 0 1.5h-1A.75.75 0 0 1 3 7.75Zm4 0A.75.75 0 0 1 7.75 7h1a.75.75 0 0 1 0 1.5h-1A.75.75 0 0 1 7 7.75Z"/></svg>
+									Student at @42school
+								</span>
+								<span className="landing_github__mock__meta__item">
+									<MapPin size={14} weight="regular" />
+									Paris
 								</span>
 							</div>
 						</aside>
@@ -385,23 +403,35 @@ function LandingGithubUsage() {
 							<div className="landing_github__mock__readme">
 								<div className="landing_github__mock__readme__header">
 									<span className="landing_github__mock__readme__badge">
-										Elnop / Elnop
+										Elnop / readme.md
 									</span>
-									<span>README.md</span>
+									<svg className="landing_github__mock__readme__edit" width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg>
 								</div>
 								<div className="landing_github__mock__readme__body">
-									{/* eslint-disable-next-line @next/next/no-img-element */}
-									<img
-										src={CARD_URL}
-										alt="CodinGame Profile Card"
-									/>
+									<a
+										href="https://www.codingame.com/profile/961697f63a0daf0d4649a6f1c368acf81098515"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										{/* eslint-disable-next-line @next/next/no-img-element */}
+										<img
+											src={CARD_URL}
+											alt="CodinGame Profile Card"
+										/>
+									</a>
 								</div>
 							</div>
 
-							{/* Fake repos grid */}
+							{/* Repos grid */}
 							<div className="landing_github__mock__repos">
-								{FAKE_REPOS.map((repo) => (
-									<div key={repo.name} className="landing_github__mock__repo">
+								{REPOS.map((repo) => (
+									<a
+										key={repo.name}
+										href={repo.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="landing_github__mock__repo"
+									>
 										<span className="landing_github__mock__repo__name">
 											{repo.name}
 										</span>
@@ -418,7 +448,7 @@ function LandingGithubUsage() {
 											</span>
 											<span><Star size={13} weight="regular" /> {repo.stars}</span>
 										</div>
-									</div>
+									</a>
 								))}
 							</div>
 						</div>
@@ -437,7 +467,7 @@ function ExampleCard({ handle, badges }: { handle: string; badges: string }) {
 	return (
 		<div className="landing_example_item">
 			<div className="landing_example_card">
-				{/* skeleton — hidden once image loads */}
+				{/* skeleton . hidden once image loads */}
 				{!loaded && !error && (
 					<div className="landing_example_skeleton" aria-hidden="true" />
 				)}

@@ -48,11 +48,9 @@
 .landing_hero_overlay {
 	position: absolute;
 	inset: 0;
-	background: radial-gradient(
-		ellipse 70% 60% at 50% 50%,
-		transparent 0%,
-		var(--color-nav-dark) 80%
-	);
+	background: radial-gradient(ellipse 70% 60% at 50% 50%,
+			transparent 0%,
+			var(--color-nav-dark) 80%);
 	pointer-events: none;
 }
 
@@ -101,7 +99,7 @@
 	animation: hero_reveal_left 1.6s 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Vertical separator — fixed at screen center */
+/* Vertical separator . fixed at screen center */
 .landing_hero_sep {
 	position: absolute;
 	left: 50%;
@@ -245,6 +243,7 @@
 		opacity: 0;
 		transform: translateY(18px);
 	}
+
 	to {
 		opacity: 1;
 		transform: translateY(0);
@@ -255,6 +254,7 @@
 	from {
 		transform: translateX(100%);
 	}
+
 	to {
 		transform: translateX(0);
 	}
@@ -265,6 +265,7 @@
 		transform: translateX(-50%) scaleY(0);
 		opacity: 0;
 	}
+
 	to {
 		transform: translateX(-50%) scaleY(1);
 		opacity: 0.4;
@@ -275,6 +276,7 @@
 	from {
 		transform: translateX(-100%);
 	}
+
 	to {
 		transform: translateX(0);
 	}
@@ -284,6 +286,7 @@
 	from {
 		transform: translateY(100%);
 	}
+
 	to {
 		transform: translateY(0);
 	}
@@ -293,6 +296,7 @@
 	from {
 		transform: translateY(-100%);
 	}
+
 	to {
 		transform: translateY(0);
 	}
@@ -303,6 +307,7 @@
 		transform: scaleX(0);
 		opacity: 0;
 	}
+
 	to {
 		transform: scaleX(1);
 		opacity: 0.4;
@@ -367,7 +372,7 @@
 	width: 100%;
 }
 
-/* border-radius: 0 intentional — matches --radius-btn: 0px from globals */
+/* border-radius: 0 intentional . matches --radius-btn: 0px from globals */
 .landing_form {
 	display: flex;
 	flex-direction: row;
@@ -449,12 +454,10 @@
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(
-		105deg,
-		transparent 30%,
-		rgba(255, 255, 255, 0.35) 50%,
-		transparent 70%
-	);
+	background: linear-gradient(105deg,
+			transparent 30%,
+			rgba(255, 255, 255, 0.35) 50%,
+			transparent 70%);
 	transform: translateX(-100%);
 	transition: transform 0.5s;
 }
@@ -504,6 +507,7 @@
 		opacity: 0;
 		transform: translateX(-50%) translateY(18px);
 	}
+
 	to {
 		opacity: 1;
 		transform: translateX(-50%) translateY(0);
@@ -518,11 +522,13 @@
 }
 
 @keyframes scroll_pulse {
+
 	0%,
 	100% {
 		opacity: 0.4;
 		transform: scaleY(1);
 	}
+
 	50% {
 		opacity: 1;
 		transform: scaleY(1.1);
@@ -681,20 +687,23 @@
 
 /* ── Skeleton loader ── */
 @keyframes skeleton_shimmer {
-	0%   { background-position: -200% 0; }
-	100% { background-position:  200% 0; }
+	0% {
+		background-position: -200% 0;
+	}
+
+	100% {
+		background-position: 200% 0;
+	}
 }
 
 .landing_example_skeleton {
 	width: 100%;
 	aspect-ratio: 2 / 1;
 	border-radius: 6px;
-	background: linear-gradient(
-		90deg,
-		rgba(255, 255, 255, 0.05) 25%,
-		rgba(255, 255, 255, 0.09) 50%,
-		rgba(255, 255, 255, 0.05) 75%
-	);
+	background: linear-gradient(90deg,
+			rgba(255, 255, 255, 0.05) 25%,
+			rgba(255, 255, 255, 0.09) 50%,
+			rgba(255, 255, 255, 0.05) 75%);
 	background-size: 200% 100%;
 	animation: skeleton_shimmer 1.6s ease-in-out infinite;
 }
@@ -732,7 +741,7 @@
 /* ── GitHub Usage ── */
 .landing_github {
 	width: 100%;
-	padding: 5rem 2rem;
+	padding: 5rem 6rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -785,9 +794,17 @@
 	background: #30363d;
 }
 
-.landing_github__snippet__dot:nth-child(1) { background: #ff5f57; }
-.landing_github__snippet__dot:nth-child(2) { background: #febc2e; }
-.landing_github__snippet__dot:nth-child(3) { background: #28c840; }
+.landing_github__snippet__dot:nth-child(1) {
+	background: #ff5f57;
+}
+
+.landing_github__snippet__dot:nth-child(2) {
+	background: #febc2e;
+}
+
+.landing_github__snippet__dot:nth-child(3) {
+	background: #28c840;
+}
 
 .landing_github__snippet__label {
 	margin-left: 0.4rem;
@@ -820,7 +837,7 @@
 	overflow: visible;
 }
 
-/* shaft — length ≈ 88px */
+/* shaft . length ≈ 88px */
 .landing_github__arrow svg path:first-child {
 	stroke: var(--color-accent);
 	stroke-width: 2;
@@ -832,7 +849,7 @@
 	transition: stroke-dashoffset 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* arrowhead segments — length ≈ 17px each */
+/* arrowhead segments . length ≈ 17px each */
 .landing_github__arrow svg path:not(:first-child) {
 	stroke: var(--color-accent);
 	stroke-width: 2;
@@ -885,9 +902,17 @@
 	border-radius: 50%;
 }
 
-.landing_github__mock__topbar__dot:nth-child(1) { background: #ff5f57; }
-.landing_github__mock__topbar__dot:nth-child(2) { background: #febc2e; }
-.landing_github__mock__topbar__dot:nth-child(3) { background: #28c840; }
+.landing_github__mock__topbar__dot:nth-child(1) {
+	background: #ff5f57;
+}
+
+.landing_github__mock__topbar__dot:nth-child(2) {
+	background: #febc2e;
+}
+
+.landing_github__mock__topbar__dot:nth-child(3) {
+	background: #28c840;
+}
 
 .landing_github__mock__topbar__url {
 	flex: 1;
@@ -901,6 +926,14 @@
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
+	text-decoration: none;
+	cursor: pointer;
+	transition: color 0.15s, border-color 0.15s;
+}
+
+.landing_github__mock__topbar__url:hover {
+	color: #58a6ff;
+	border-color: #58a6ff;
 }
 
 .landing_github__mock__body {
@@ -912,15 +945,16 @@
 
 .landing_github__mock__sidebar {
 	flex: 0 0 auto;
-	width: 200px;
+	width: 220px;
 	display: flex;
 	flex-direction: column;
-	gap: 0.6rem;
+	align-items: flex-start;
+	gap: 0.7rem;
 }
 
 .landing_github__mock__avatar {
-	width: 200px;
-	height: 200px;
+	width: 120px;
+	height: 120px;
 	border-radius: 50%;
 	background: linear-gradient(135deg, #f2bb13 0%, #e05c00 100%);
 	border: 3px solid #30363d;
@@ -930,41 +964,57 @@
 	color: #1a1a1a;
 }
 
-.landing_github__mock__username {
-	font-size: 1.1rem;
-	font-weight: 600;
-	color: #e6edf3;
-}
-
-.landing_github__mock__bio {
-	font-size: 0.75rem;
-	color: #8b949e;
-	line-height: 1.5;
-}
-
-.landing_github__mock__location {
+.landing_github__mock__names {
 	display: flex;
-	align-items: center;
-	gap: 0.3rem;
-	font-size: 0.72rem;
-	color: #6e7681;
+	flex-direction: column;
+	gap: 0.1rem;
+}
+
+.landing_github__mock__fullname {
+	font-size: 1rem;
+	font-weight: 700;
+	color: #e6edf3;
+	line-height: 1.2;
+}
+
+.landing_github__mock__username {
+	font-size: 0.85rem;
+	font-weight: 400;
+	color: #8b949e;
 }
 
 .landing_github__mock__stats {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.4rem;
-	margin-top: 0.2rem;
+	align-items: center;
+	gap: 0.3rem;
 }
 
 .landing_github__mock__stat {
-	font-size: 0.7rem;
+	font-size: 0.72rem;
 	color: #8b949e;
 }
 
 .landing_github__mock__stat strong {
 	color: #e6edf3;
 	font-weight: 600;
+}
+
+.landing_github__mock__meta {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	padding-top: 0.2rem;
+	border-top: 1px solid #21262d;
+	width: 100%;
+}
+
+.landing_github__mock__meta__item {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+	font-size: 0.72rem;
+	color: #8b949e;
 }
 
 .landing_github__mock__main {
@@ -990,6 +1040,12 @@
 	border-bottom: 1px solid #30363d;
 	font-size: 0.72rem;
 	color: #8b949e;
+}
+
+.landing_github__mock__readme__edit {
+	margin-left: auto;
+	color: #6e7681;
+	flex-shrink: 0;
 }
 
 .landing_github__mock__readme__badge {
@@ -1027,6 +1083,14 @@
 	display: flex;
 	flex-direction: column;
 	gap: 0.3rem;
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+	transition: border-color 0.15s;
+}
+
+.landing_github__mock__repo:hover {
+	border-color: #58a6ff;
 }
 
 .landing_github__mock__repo__name {
@@ -1050,7 +1114,7 @@
 	color: #8b949e;
 }
 
-.landing_github__mock__repo__meta > span {
+.landing_github__mock__repo__meta>span {
 	display: flex;
 	align-items: center;
 	gap: 0.25rem;
