@@ -9,6 +9,6 @@ export function generate_url(
 		`w=${Math.floor(width)}` +
 		`&public_handle=${public_handle}` +
 		`&bg_img=true` +
-		`&badges=${badges}`
+		`&badges=${encodeURIComponent(badges)}`
 	);
 }

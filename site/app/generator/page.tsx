@@ -6,6 +6,7 @@ import "./style.css";
 import { BadgesTab } from "@/components/generator/BadgesTab/BadgesTab";
 import { ProfileUrlForm } from "@/components/generator/ProfileUrlForm/ProfileUrlForm";
 import { OutputBar } from "@/components/generator/OutputBar/OutputBar";
+import { ReadmeOutputBar } from "@/components/generator/OutputBar/ReadmeOutputBar";
 import { GeneratorProviders } from "@/context_providers/GeneratorProviders";
 import { Redirector } from "../../components/generator/Redirector";
 import type { CardProps } from "@/types/CardProps";
@@ -39,6 +40,7 @@ function HomeMain() {
 				<ProfileUrlForm />
 				<Preview />
 				<OutputBar base_url={svg_base_url} title="SVG link" />
+				<ReadmeOutputBar base_url={svg_base_url} title="README" />
 			</div>
 		</main>
 	);
