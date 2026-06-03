@@ -105,7 +105,7 @@ function LandingHero() {
 	const [input, setInput] = useState("");
 	const [cardLoaded, setCardLoaded] = useState(false);
 	const heroRef = useRef<HTMLElement>(null);
-	const [isHeroVisible, setIsHeroVisible] = useState(false);
+	const [isHeroVisible, setIsHeroVisible] = useState(true);
 
 	useEffect(() => {
 		const hero = heroRef.current;
