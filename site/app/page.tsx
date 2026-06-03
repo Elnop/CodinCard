@@ -104,6 +104,23 @@ function LandingHero() {
 	const router = useRouter();
 	const [input, setInput] = useState("");
 	const [cardLoaded, setCardLoaded] = useState(false);
+	const heroRef = useRef<HTMLElement>(null);
+	const [isHeroVisible, setIsHeroVisible] = useState(false);
+
+	useEffect(() => {
+		const hero = heroRef.current;
+		if (!hero) return;
+
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				setIsHeroVisible(entry.isIntersecting);
+			},
+			{ threshold: 0.45 }
+		);
+
+		observer.observe(hero);
+		return () => observer.disconnect();
+	}, []);
 
 	const handle = extractHandle(input);
 	const isValid = handle.length > 0;
@@ -115,14 +132,14 @@ function LandingHero() {
 	}
 
 	return (
-		<section className="landing_hero">
+		<section className="landing_hero" ref={heroRef}>
 			<CodeRainCanvas />
 			<div className="landing_hero_overlay" />
 
 			<div className="landing_hero_content">
 				<div className="landing_hero_top">
 					<div className="landing_hero_left">
-						<div className="landing_hero_left_inner">
+						<div className={`landing_hero_left_inner${isHeroVisible ? " is_animated" : ""}`}>
 							<span className="landing_eyebrow">CodinGame Profile Card Generator</span>
 							<div className="landing_logo">
 								<span className="landing_logo_codin">Codin</span>
@@ -131,10 +148,10 @@ function LandingHero() {
 						</div>
 					</div>
 
-					<div className="landing_hero_sep" />
+					<div className={`landing_hero_sep${isHeroVisible ? " is_animated" : ""}`} />
 
 					<div className="landing_hero_right">
-						<div className={`landing_hero_right_inner${cardLoaded ? " is_loaded" : ""}`}>
+						<div className={`landing_hero_right_inner${cardLoaded && isHeroVisible ? " is_loaded" : ""}`}>
 							<img
 								className="landing_hero_card"
 								src="/svg_card/?w=1000&public_handle=961697f63a0daf0d4649a6f1c368acf81098515&bg_img=true&badges=CODING_SPEED,AI,ALGORITHMS,COLLABORATION,38823044854472,1923859026951,110379867599957,1925032048027,1924670178432,1925113228778,1925254563678,1925189810047,1925134353691"
@@ -145,7 +162,7 @@ function LandingHero() {
 					</div>
 				</div>
 
-				<div className="landing_hero_bottom">
+				<div className={`landing_hero_bottom${isHeroVisible ? " is_animated" : ""}`}>
 					<p className="landing_tagline">
 						Génère une carte SVG de ton profil CodinGame, prête à embarquer dans{" "}
 						<strong>ton README GitHub</strong>, ton <strong>portfolio</strong> ou n&apos;importe
