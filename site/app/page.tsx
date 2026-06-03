@@ -185,7 +185,7 @@ function LandingHero() {
 				<div className={`landing_hero_bottom${isHeroVisible ? " is_animated" : ""}`}>
 					<p className="landing_tagline">
 						Génère une carte SVG de ton profil CodinGame, prête à embarquer dans{" "}
-						<strong>ton README GitHub</strong>, ton <strong>portfolio</strong> ou n&apos;importe
+						<strong>ton README GitHub</strong>, ton <strong>portfolio </strong> ou n&apos;importe
 						quelle page web.
 					</p>
 
@@ -387,7 +387,7 @@ function LandingGithubUsage() {
 							</div>
 							<div className="landing_github__mock__meta">
 								<span className="landing_github__mock__meta__item">
-									<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1.5 14.25c0 .138.112.25.25.25H4v-1.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 .75.75v1.25h2.25a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25ZM0 1.75C0 .784.784 0 1.75 0h8.5C11.216 0 12 .784 12 1.75v12.5c0 .966-.784 1.75-1.75 1.75h-8.5A1.75 1.75 0 0 1 0 14.25Zm3-2.5a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 .75.75v1h-2.5Zm4 0a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 .75.75v1h-2.5ZM3 5.25a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 0 1.5h-1A.75.75 0 0 1 3 5.25Zm4 0a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 0 1.5h-1A.75.75 0 0 1 7 5.25Zm-4 2.5A.75.75 0 0 1 3.75 7h1a.75.75 0 0 1 0 1.5h-1A.75.75 0 0 1 3 7.75Zm4 0A.75.75 0 0 1 7.75 7h1a.75.75 0 0 1 0 1.5h-1A.75.75 0 0 1 7 7.75Z"/></svg>
+									<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1.5 14.25c0 .138.112.25.25.25H4v-1.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 .75.75v1.25h2.25a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25ZM0 1.75C0 .784.784 0 1.75 0h8.5C11.216 0 12 .784 12 1.75v12.5c0 .966-.784 1.75-1.75 1.75h-8.5A1.75 1.75 0 0 1 0 14.25Zm3-2.5a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 .75.75v1h-2.5Zm4 0a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 .75.75v1h-2.5ZM3 5.25a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 0 1.5h-1A.75.75 0 0 1 3 5.25Zm4 0a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 0 1.5h-1A.75.75 0 0 1 7 5.25Zm-4 2.5A.75.75 0 0 1 3.75 7h1a.75.75 0 0 1 0 1.5h-1A.75.75 0 0 1 3 7.75Zm4 0A.75.75 0 0 1 7.75 7h1a.75.75 0 0 1 0 1.5h-1A.75.75 0 0 1 7 7.75Z" /></svg>
 									Student at @42school
 								</span>
 								<span className="landing_github__mock__meta__item">
@@ -405,7 +405,7 @@ function LandingGithubUsage() {
 									<span className="landing_github__mock__readme__badge">
 										Elnop / readme.md
 									</span>
-									<svg className="landing_github__mock__readme__edit" width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg>
+									<svg className="landing_github__mock__readme__edit" width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z" /></svg>
 								</div>
 								<div className="landing_github__mock__readme__body">
 									<a
