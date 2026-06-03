@@ -103,9 +103,19 @@ function CodeRainCanvas() {
 function LandingHero() {
 	const router = useRouter();
 	const [input, setInput] = useState("");
-	const [cardLoaded, setCardLoaded] = useState(false);
+	const imgRef = useRef<HTMLImageElement>(null);
+	const imgLoadedRef = useRef(false);
+	const [cardVisible, setCardVisible] = useState(false);
 	const heroRef = useRef<HTMLElement>(null);
 	const [isHeroVisible, setIsHeroVisible] = useState(true);
+
+	useEffect(() => {
+		// Image may already be complete if served from browser cache
+		if (imgRef.current?.complete) {
+			imgLoadedRef.current = true;
+			setCardVisible(true);
+		}
+	}, []);
 
 	useEffect(() => {
 		const hero = heroRef.current;
@@ -114,8 +124,13 @@ function LandingHero() {
 		const observer = new IntersectionObserver(
 			([entry]) => {
 				setIsHeroVisible(entry.isIntersecting);
+				if (entry.isIntersecting && imgLoadedRef.current) {
+					setCardVisible(true);
+				} else if (!entry.isIntersecting) {
+					setCardVisible(false);
+				}
 			},
-			{ threshold: 0.45 }
+			{ threshold: 0.1 }
 		);
 
 		observer.observe(hero);
@@ -151,12 +166,16 @@ function LandingHero() {
 					<div className={`landing_hero_sep${isHeroVisible ? " is_animated" : ""}`} />
 
 					<div className="landing_hero_right">
-						<div className={`landing_hero_right_inner${cardLoaded && isHeroVisible ? " is_loaded" : ""}`}>
+						<div className={`landing_hero_right_inner${cardVisible ? " is_loaded" : ""}`}>
 							<img
+								ref={imgRef}
 								className="landing_hero_card"
 								src="/svg_card/?w=1000&public_handle=961697f63a0daf0d4649a6f1c368acf81098515&bg_img=true&badges=CODING_SPEED,AI,ALGORITHMS,COLLABORATION,38823044854472,1923859026951,110379867599957,1925032048027,1924670178432,1925113228778,1925254563678,1925189810047,1925134353691"
 								alt="Exemple de card CodinGame"
-								onLoad={() => setCardLoaded(true)}
+								onLoad={() => {
+									imgLoadedRef.current = true;
+									setCardVisible(true);
+								}}
 							/>
 						</div>
 					</div>
