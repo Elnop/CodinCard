@@ -41,7 +41,7 @@ export async function Card({
 		!codingamer.rank ||
 		!codingamer.rank_title_threshold
 	)
-		return <div>No codingamer found</div>;
+		return <div style={{ color: "#d9d9d9", fontFamily: "sans-serif", padding: "1rem" }}>CodinGame</div>;
 	let avatarBuffer = "";
 	let coverBuffer = "";
 	try {

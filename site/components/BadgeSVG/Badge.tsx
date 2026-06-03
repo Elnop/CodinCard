@@ -33,19 +33,21 @@ export async function Badge({
 	return (
 		<div className={"badge " + (className ?? "")} style={{ height: h, width: w, ...style }}>
 			<div className="badge_image_container" style={{ backgroundColor: color }}>
-				<div
-					className="badge_image"
-					style={{
-						height: h * 0.8,
-						width: h * 0.8,
-						padding: Math.floor(h * 0.1),
-						backgroundImage: `url(${image_buffer})`,
-						backgroundSize: "contain",
-						backgroundPosition: "center",
-						backgroundOrigin: "content-box",
-						backgroundRepeat: "no-repeat",
-					}}
-				/>
+				{image_buffer && (
+					<div
+						className="badge_image"
+						style={{
+							height: h * 0.8,
+							width: h * 0.8,
+							padding: Math.floor(h * 0.1),
+							backgroundImage: `url(${image_buffer})`,
+							backgroundSize: "contain",
+							backgroundPosition: "center",
+							backgroundOrigin: "content-box",
+							backgroundRepeat: "no-repeat",
+						}}
+					/>
+				)}
 			</div>
 			<div className="badge_texts" style={{ left: h * 1, width: w - h - w * 0.02 }}>
 				<div className="badge_name_container">
