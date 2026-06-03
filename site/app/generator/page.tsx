@@ -29,7 +29,7 @@ function HomeHeader() {
 function HomeMain() {
 	const [svg_base_url, set_svg_base_url] = useState<string | undefined>(undefined);
 	useEffect(() => {
-		set_svg_base_url(window.location.host + "/svg_card/");
+		set_svg_base_url(window.location.origin + "/svg_card/");
 	}, []);
 	return (
 		<main className="generator_main">
