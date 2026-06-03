@@ -299,14 +299,15 @@ function LandingGithubUsage() {
 
 				{/* Center: animated arrow */}
 				<div className="landing_github__arrow">
-					<svg ref={arrowRef} viewBox="0 0 100 60" aria-hidden="true">
-						{/* shaft: smooth S-curve */}
-						<path d="M6,30 C25,8 60,52 80,30" />
+					<svg ref={arrowRef} viewBox="0 0 120 40" aria-hidden="true">
+						{/* shaft */}
+						<path d="M8,20 L96,20" />
 						{/* arrowhead upper */}
-						<path d="M80,30 L70,20" />
+						<path d="M96,20 L80,8" />
 						{/* arrowhead lower */}
-						<path d="M80,30 L70,40" />
+						<path d="M96,20 L80,32" />
 					</svg>
+					<span className="landing_github__arrow__label">colle dans ton README</span>
 				</div>
 
 				{/* Right: GitHub profile mock */}

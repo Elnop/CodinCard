@@ -587,7 +587,7 @@
 
 /* ── Section Exemple ── */
 .landing_example {
-	background: var(--color-nav-dark);
+	background: var(--color-header-bg);
 	padding: 5rem 2rem;
 	display: flex;
 	flex-direction: column;
@@ -762,42 +762,53 @@
 .landing_github__arrow {
 	flex: 0 0 auto;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	gap: 0.5rem;
 }
 
 .landing_github__arrow svg {
-	width: 100px;
-	height: 60px;
+	width: 120px;
+	height: 40px;
 	overflow: visible;
 }
 
-/* shaft */
+/* shaft — length ≈ 88px */
 .landing_github__arrow svg path:first-child {
 	stroke: var(--color-accent);
-	stroke-width: 2.5;
+	stroke-width: 2;
 	fill: none;
 	stroke-linecap: round;
 	stroke-linejoin: round;
-	stroke-dasharray: 120;
-	stroke-dashoffset: 120;
-	transition: stroke-dashoffset 0.7s ease-in-out;
+	stroke-dasharray: 90;
+	stroke-dashoffset: 90;
+	transition: stroke-dashoffset 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* arrowhead segments */
+/* arrowhead segments — length ≈ 17px each */
 .landing_github__arrow svg path:not(:first-child) {
 	stroke: var(--color-accent);
-	stroke-width: 2.5;
+	stroke-width: 2;
 	fill: none;
 	stroke-linecap: round;
 	stroke-linejoin: round;
 	stroke-dasharray: 20;
 	stroke-dashoffset: 20;
-	transition: stroke-dashoffset 0.3s ease-in-out 0.65s;
+	transition: stroke-dashoffset 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
 }
 
 .landing_github__arrow svg path.animated {
 	stroke-dashoffset: 0;
+}
+
+.landing_github__arrow__label {
+	font-family: "JetBrains Mono", monospace;
+	font-size: 0.6rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: rgba(242, 187, 19, 0.5);
+	white-space: nowrap;
 }
 
 /* ── Right: GitHub mock ── */
