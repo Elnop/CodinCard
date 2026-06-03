@@ -15,6 +15,7 @@
 		"check:fix": "npm run lint:fix && npm run format"
 	},
 	"dependencies": {
+		"@phosphor-icons/react": "^2.1.10",
 		"codingame_profile_fetcher": "^0.3.7",
 		"next": "^16.2.7",
 		"react": "^19.2.7",

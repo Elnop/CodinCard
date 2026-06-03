@@ -421,6 +421,9 @@
 .landing_btn {
 	height: 62px;
 	padding: 0 2.2rem;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
 	background: linear-gradient(135deg, #f2bb13 0%, #ffd23f 60%, #f2bb13 100%);
 	background-size: 200% 100%;
 	background-position: 0% 0%;
@@ -586,9 +589,11 @@
 }
 
 .landing_feature_icon {
-	font-size: 1.4rem;
-	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	margin-bottom: 0.3rem;
+	color: #f2bb13;
 }
 
 .landing_feature_title {
@@ -922,7 +927,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 4rem;
+	color: #1a1a1a;
 }
 
 .landing_github__mock__username {
@@ -938,6 +943,9 @@
 }
 
 .landing_github__mock__location {
+	display: flex;
+	align-items: center;
+	gap: 0.3rem;
 	font-size: 0.72rem;
 	color: #6e7681;
 }
@@ -1040,6 +1048,12 @@
 	margin-top: 0.2rem;
 	font-size: 0.65rem;
 	color: #8b949e;
+}
+
+.landing_github__mock__repo__meta > span {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
 }
 
 .landing_github__mock__repo__lang {

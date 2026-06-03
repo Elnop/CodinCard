@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import "./landing.css";
 import Link from "next/link";
+import { Medal, Lightning, Link as LinkIcon, User, Star, MapPin, ArrowRight } from "@phosphor-icons/react";
 
 const PROFILE_BASE_URL = "https://www.codingame.com/profile/";
 
@@ -203,7 +204,7 @@ function LandingHero() {
 								autoFocus
 							/>
 							<button className="landing_btn" type="submit" disabled={!isValid}>
-								Générer →
+								Générer <ArrowRight size={16} weight="bold" />
 							</button>
 						</form>
 						<span className="landing_form_hint">
@@ -224,17 +225,17 @@ function LandingHero() {
 
 const FEATURES = [
 	{
-		icon: "🏅",
+		icon: <Medal size={28} weight="regular" />,
 		title: "Badges personnalisables",
 		desc: "Sélectionne tes quêtes, langages et achievements CodinGame à afficher.",
 	},
 	{
-		icon: "⚡",
+		icon: <Lightning size={28} weight="regular" />,
 		title: "Lien SVG permanent",
 		desc: "Un seul lien, toujours à jour. Colle-le une fois, il se met à jour automatiquement.",
 	},
 	{
-		icon: "🔗",
+		icon: <LinkIcon size={28} weight="regular" />,
 		title: "Embed partout",
 		desc: "README GitHub, portfolio, blog — une balise <img> suffit.",
 	},
@@ -361,12 +362,12 @@ function LandingGithubUsage() {
 					<div className="landing_github__mock__body">
 						{/* Sidebar: avatar + user info */}
 						<aside className="landing_github__mock__sidebar">
-							<div className="landing_github__mock__avatar">🧑‍💻</div>
+							<div className="landing_github__mock__avatar"><User size={80} weight="regular" /></div>
 							<span className="landing_github__mock__username">Elnop</span>
 							<span className="landing_github__mock__bio">
 								Competitive programmer · CodinGame Legend · Open source enthusiast
 							</span>
-							<span className="landing_github__mock__location">📍 Paris, France</span>
+							<span className="landing_github__mock__location"><MapPin size={14} weight="regular" /> Paris, France</span>
 							<div className="landing_github__mock__stats">
 								<span className="landing_github__mock__stat">
 									<strong>312</strong> followers
@@ -415,7 +416,7 @@ function LandingGithubUsage() {
 												/>
 												{repo.lang}
 											</span>
-											<span>⭐ {repo.stars}</span>
+											<span><Star size={13} weight="regular" /> {repo.stars}</span>
 										</div>
 									</div>
 								))}
