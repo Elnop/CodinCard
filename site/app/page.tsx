@@ -400,6 +400,10 @@ function ExampleCard({ handle, badges }: { handle: string; badges: string }) {
 	return (
 		<div className="landing_example_item">
 			<div className="landing_example_card">
+				{/* skeleton — hidden once image loads */}
+				{!loaded && !error && (
+					<div className="landing_example_skeleton" aria-hidden="true" />
+				)}
 				{/* Using <img> intentionally: Next.js <Image> does not support dynamic SVG src from a route */}
 				{!error && (
 					<img
@@ -410,11 +414,6 @@ function ExampleCard({ handle, badges }: { handle: string; badges: string }) {
 						onLoad={() => setLoaded(true)}
 						onError={() => setError(true)}
 					/>
-				)}
-				{!loaded && !error && (
-					<span className="landing_example_placeholder">
-						aperçu chargé depuis l&apos;API CodinGame…
-					</span>
 				)}
 				{error && (
 					<span className="landing_example_placeholder landing_example_error">
